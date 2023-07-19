@@ -1,0 +1,6 @@
+<div *ngIf="anime">
+	<h2>{{ anime.attributes.canonicalTitle }}</h2>
+	<img [src]="anime.attributes.posterImage.medium" alt="Capa do Anime">
+	<p>{{ anime.attributes.synopsis }}</p>
+</div>
+<button (click)="goBack()">Voltar para a Lista</button>
