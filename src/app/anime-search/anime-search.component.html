@@ -1,0 +1,15 @@
+<div class="anime-list">
+	<div class="anime-list-item" *ngFor="let anime of filteredAnimes">
+		<a (click)="navigateToAnimeDetails(anime.attributes.slug)">
+			{{ anime.attributes.canonicalTitle | slice:0:20 }}{{
+			anime.attributes.canonicalTitle.length > 20 ? '...' : '' }}
+		</a>
+		<img class="anime-img" [src]="anime.attributes.posterImage.medium"
+			alt="Capa do Anime">
+	</div>
+</div>
+
+<div *ngIf="noResults">Nenhum anime encontrado.</div>
+<div>
+	<button (click)="goBack()">Voltar para a Lista</button>
+</div>

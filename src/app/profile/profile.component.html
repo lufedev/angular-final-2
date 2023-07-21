@@ -1,0 +1,14 @@
+<div class="anime-list">
+	<div class="anime-list-item" *ngFor="let anime of animes">
+		<h2>{{ anime.nome.attributes.canonicalTitle }}</h2>
+		<img class="anime-img" [src]="anime.nome.attributes.posterImage.medium"
+			alt="Capa do Anime">
+		<div>
+			<!-- Generate stars based on the anime.nota value -->
+			<ng-container *ngFor="let star of generateStars(anime.nota)">
+				<span class="star">&#9733;</span>
+			</ng-container>
+		</div>
+		<p>{{ anime.status }}</p>
+	</div>
+</div>

@@ -1,0 +1,13 @@
+.rating-menu {
+	font-size: 24px; /* Adjust the size of the stars */
+  }
+  
+  .star {
+	cursor: pointer;
+	color: #ccc;
+  }
+  
+  .star.active {
+	color: #f1c40f; /* Change the color of active stars */
+  }
+  

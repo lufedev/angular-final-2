@@ -4,3 +4,8 @@
 	<p>{{ anime.attributes.synopsis }}</p>
 </div>
 <button (click)="goBack()">Voltar para a Lista</button>
+<button (click)="openRatingStatusSelection()">Adicionar aos Favoritos</button>
+
+<!-- Use *ngIf to conditionally render the rating and status selection component -->
+<app-rating-status-selection *ngIf="showRatingStatusSelection"
+	(onSubmit)="addToList($event)"></app-rating-status-selection>

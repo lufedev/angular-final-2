@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./anime-list.component.css']
 })
 export class AnimeListComponent implements OnInit {
-  animes: any[] = [];
-  filteredAnimes: any[] = [];
+  animes: any;
+  
   currentPage: number = 1;
-  pageSize: number = 20;
-  noResults: boolean = false;
+  pageSize: number = 16;
+
 
   constructor(private animeService: AnimeService, private router: Router) { }
 
@@ -23,7 +23,6 @@ export class AnimeListComponent implements OnInit {
   loadAnimes(page: number): void {
     this.animeService.getAnimes(page, this.pageSize).subscribe(data => {
       this.animes = data.data;
-      this.filterAnimes('');
     });
   }
 
@@ -42,10 +41,6 @@ export class AnimeListComponent implements OnInit {
   navigateToAnimeDetails(animeSlug: string): void {
     this.router.navigate(['/anime-details', animeSlug]);
   }
-
-  filterAnimes(animeData: any[]): void {
-    this.animes = animeData;
-    this.filteredAnimes = animeData;
-    this.noResults = this.filteredAnimes.length === 0;
-  }
+ 
+  
 }

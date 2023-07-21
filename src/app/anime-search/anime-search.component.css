@@ -1,0 +1,27 @@
+.anime-list {
+	display: flex;
+	flex-wrap: wrap;
+  }
+  
+  .anime-list-item {
+	margin-right: 20px;
+	margin-bottom: 20px;
+  }
+  
+  .anime-list-item a {
+	text-decoration: none;
+	color: #333;
+	display: block;
+  }
+  
+  .anime-list-item h2 {
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 10px;
+  }
+  
+  .anime-img {
+	width: 200px;
+	height: 300px;
+  }
+  

@@ -1,0 +1,21 @@
+<div>
+	<h2>Seleção de Classificação e Status</h2>
+	<div class="rating-menu">
+		<span class="star" (click)="rate(1)" [ngClass]="{ 'active': nota >= 1 }">&#9733;</span>
+		<span class="star" (click)="rate(2)" [ngClass]="{ 'active': nota >= 2 }">&#9733;</span>
+		<span class="star" (click)="rate(3)" [ngClass]="{ 'active': nota >= 3 }">&#9733;</span>
+		<span class="star" (click)="rate(4)" [ngClass]="{ 'active': nota >= 4 }">&#9733;</span>
+		<span class="star" (click)="rate(5)" [ngClass]="{ 'active': nota === 5 }">&#9733;</span>
+	</div>
+	<div>
+		<label for="status">Status:</label>
+		<select [(ngModel)]="status" id="status">
+			<option value>Selecione o status</option>
+			<option value="assistindo">Assistindo</option>
+			<option value="assistido">Assistido</option>
+			<option value="parado">Parado</option>
+			<option value="nao-quero-assistir">Não quero assistir</option>
+		</select>
+	</div>
+	<button (click)="submitRatingStatus()">Enviar</button>
+</div>

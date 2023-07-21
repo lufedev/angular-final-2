@@ -19,15 +19,8 @@
   p {
 	margin: 5px 0;
   }
-  .pagination-buttons {
-	display: flex;
-	justify-content: center;
-	position: fixed;
-	bottom: 20px;
-	left: 0;
-	right: 0;
-  }
-  
-  .pagination-buttons button {
-	margin: 0 10px;
-  }
+  /* CSS for the star icon */
+.star {
+	font-size: 50px;
+  color: #f1c40f;
+}

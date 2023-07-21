@@ -1,4 +1,9 @@
-<div class="search-bar">
-	<input type="text" [(ngModel)]="searchTerm">
-	<button (click)="onSearch()">Pesquisar</button>
+<div class="anime-form">
+
+	<mat-form-field class="form">
+		<span matPrefix> </span>
+		<input type="tel" matInput placeholder="Digite o nome do anime" name="search"
+			[(ngModel)]="searchTerm">
+		<button class="search" matSuffix mat-button (click)="searchAnime(searchTerm)"><mat-icon>search</mat-icon></button>
+	</mat-form-field>
 </div>

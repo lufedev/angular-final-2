@@ -1,20 +1,20 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { AnimeService } from '../anime.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { SearchService } from '../search.service';
+
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
-  styleUrls: ['./search-bar.component.css']
+  styleUrls: ['./search-bar.component.css'],
 })
 export class SearchBarComponent {
   searchTerm: string = '';
-  @Output() searchResults = new EventEmitter<any[]>();
 
-  constructor(private animeService: AnimeService) {}
+  constructor(private router: Router, private searchService: SearchService) {}
 
-  onSearch(): void {
-    this.animeService.searchAnimes(this.searchTerm).subscribe(data => {
-      this.searchResults.emit(data.data);
-    });
+  searchAnime(text: string): void {
+    this.searchTerm = text;
+    this.searchService.setSearchTerm(this.searchTerm);
+    this.router.navigate(['/search', this.searchTerm]);
   }
-
 }

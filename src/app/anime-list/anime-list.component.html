@@ -1,6 +1,5 @@
-<app-search-bar (searchResults)="filterAnimes($event)"></app-search-bar>
 <div class="anime-list">
-	<div class="anime-list-item" *ngFor="let anime of filteredAnimes">
+	<div class="anime-list-item" *ngFor="let anime of animes">
 		<a (click)="navigateToAnimeDetails(anime.attributes.slug)">
 			{{ anime.attributes.canonicalTitle | slice:0:20 }}{{
 			anime.attributes.canonicalTitle.length > 20 ? '...' : '' }}
@@ -10,9 +9,12 @@
 	</div>
 </div>
 
-<div *ngIf="noResults">Nenhum anime encontrado.</div>
-
-<div>
-	<button (click)="loadPreviousPage()" [disabled]="currentPage === 1">Voltar</button>
-	<button (click)="loadNextPage()">Próxima</button>
+<div class="pagination-buttons">
+	<button mat-icon-button (click)="loadPreviousPage()"
+		[disabled]="currentPage === 1">
+		<mat-icon>keyboard_arrow_left</mat-icon>
+	</button>
+	<button mat-icon-button (click)="loadNextPage()">
+		<mat-icon>keyboard_arrow_right</mat-icon>
+	</button>
 </div>
