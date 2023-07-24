@@ -1,9 +1,11 @@
 .anime-form{
-	margin-top: 4%;
-
+	margin-top: 10px;
+	margin-left: 15px;
+	height: 10%;
 }
 .form{
-	width: 500px;
+	width: 100%;
+	
 }
 .search{
 	height: 58px;

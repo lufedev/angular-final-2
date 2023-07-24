@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs';
 export class ProfileComponent implements OnInit {
   animes: any;
 
-  constructor(private loginService:LoginService) {}
+  constructor(private loginService:LoginService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadAnimes();
@@ -23,5 +24,8 @@ export class ProfileComponent implements OnInit {
        this.animes = data;
     });
 
+  }
+  navigateToAnimeDetails(animeSlug: string): void {
+    this.router.navigate(['/anime-details', animeSlug]);
   }
 }

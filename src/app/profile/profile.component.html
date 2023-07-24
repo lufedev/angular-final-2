@@ -1,6 +1,9 @@
 <div class="anime-list">
 	<div class="anime-list-item" *ngFor="let anime of animes">
-		<h2>{{ anime.nome.attributes.canonicalTitle }}</h2>
+
+		<h2 (click)="navigateToAnimeDetails(anime.nome.attributes.slug)">{{
+			anime.nome.attributes.canonicalTitle }}</h2>
+
 		<img class="anime-img" [src]="anime.nome.attributes.posterImage.medium"
 			alt="Capa do Anime">
 		<div>

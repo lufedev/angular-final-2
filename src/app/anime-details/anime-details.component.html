@@ -1,11 +1,17 @@
-<div *ngIf="anime">
-	<h2>{{ anime.attributes.canonicalTitle }}</h2>
-	<img [src]="anime.attributes.posterImage.medium" alt="Capa do Anime">
-	<p>{{ anime.attributes.synopsis }}</p>
+<div class="box">
+	<div *ngIf="anime">
+		<h1 class="title">{{ anime.attributes.canonicalTitle }}</h1>
+		<div class="details">
+			<img [src]="anime.attributes.posterImage.medium" alt="Capa do Anime">
+			<h1 class="description">{{ anime.attributes.synopsis }}</h1>
+		</div>
+	</div>
+	<div class="options">
+		<button class="menu" (click)="goBack()">Voltar para a Lista</button>
+		<button class="menu" (click)="openRatingStatusSelection()">Adicionar aos
+			Favoritos</button>
+	</div>
+	<!-- Use *ngIf to conditionally render the rating and status selection component -->
+	<app-rating-status-selection *ngIf="showRatingStatusSelection"
+		(onSubmit)="addToList($event)"></app-rating-status-selection>
 </div>
-<button (click)="goBack()">Voltar para a Lista</button>
-<button (click)="openRatingStatusSelection()">Adicionar aos Favoritos</button>
-
-<!-- Use *ngIf to conditionally render the rating and status selection component -->
-<app-rating-status-selection *ngIf="showRatingStatusSelection"
-	(onSubmit)="addToList($event)"></app-rating-status-selection>

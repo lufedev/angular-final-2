@@ -1,0 +1,32 @@
+.title{
+	align-items: center;
+	font-size: 30px;
+	padding-left: 40%;
+	font-weight: bold;
+	margin-top: 1%;
+
+}
+.box{
+	padding-left: 10%;
+}
+.details{
+	display: flex;
+	flex-direction: row;
+}
+.description{
+	text-justify: auto;
+	padding-right: 10%;
+	padding-left: 1%;
+	font-size: 32px;
+}
+.options{
+	margin: 1%;
+}
+.menu{
+	margin: 1%;
+}
+.context{
+	margin: 1%;
+	align-items: center;
+	flex-direction: row;
+}

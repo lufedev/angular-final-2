@@ -1,4 +1,4 @@
-<div>
+<div class="rating">
 	<h2>Seleção de Classificação e Status</h2>
 	<div class="rating-menu">
 		<span class="star" (click)="rate(1)" [ngClass]="{ 'active': nota >= 1 }">&#9733;</span>
@@ -7,7 +7,7 @@
 		<span class="star" (click)="rate(4)" [ngClass]="{ 'active': nota >= 4 }">&#9733;</span>
 		<span class="star" (click)="rate(5)" [ngClass]="{ 'active': nota === 5 }">&#9733;</span>
 	</div>
-	<div>
+	<div class="context">
 		<label for="status">Status:</label>
 		<select [(ngModel)]="status" id="status">
 			<option value>Selecione o status</option>

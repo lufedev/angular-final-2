@@ -1,0 +1,23 @@
+.formField{
+	flex-direction: row;
+	width: 100%;
+	margin: 1%;
+	
+}
+
+.form-button{
+	margin-left: 18%;
+	width: 100px;
+	height: 30px;
+}
+.center{
+	display: flex;
+	justify-content: center;
+	padding-left: 14%;
+  }
+.action{
+	margin: 1%;
+	align-items: center;
+	justify-content: center;
+	padding-left: 14%;
+  }

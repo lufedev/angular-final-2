@@ -43,6 +43,7 @@ export class AnimeDetailsComponent implements OnInit {
     };
     this.loginService.adicionarAnime(animeData);
     this.showRatingStatusSelection = false;
+    this.router.navigate(['/profile']);
   }
   goBack(): void {
     this.router.navigate(['/anime-list']);

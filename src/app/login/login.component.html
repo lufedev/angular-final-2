@@ -1,35 +1,38 @@
-<ng-container *ngIf="login; else signupForm">
-	<h1> Login </h1>
-	<form (ngSubmit)="submitForm(true)" #loginForm="ngForm">
-		<mat-form-field>
-			<mat-label>Nome de usuário</mat-label>
-			<input matInput type="text" name="username" [(ngModel)]="username" required>
-		</mat-form-field>
+<div class="center">
+	<ng-container *ngIf="login; else signupForm">
+		<form (ngSubmit)="submitForm(true)" #loginForm="ngForm">
+			<h1 class="action"> Login </h1>
+			<mat-form-field class="formField">
+				<mat-label>Nome de usuário</mat-label>
+				<input matInput type="text" name="username" [(ngModel)]="username"
+					required>
+			</mat-form-field>
 
-		<mat-form-field>
-			<mat-label>Senha</mat-label>
-			<input matInput type="password" name="password" [(ngModel)]="password"
-				required>
-		</mat-form-field>
+			<mat-form-field class="formField">
+				<mat-label>Senha</mat-label>
+				<input matInput type="password" name="password" [(ngModel)]="password"
+					required>
+			</mat-form-field>
 
-		<button mat-raised-button color="primary" type="submit">Enviar</button>
-	</form>
-</ng-container>
+			<button class="form-button" mat-raised-button color="primary" type="submit">Enviar</button>
+		</form>
+	</ng-container>
 
-<ng-template #signupForm>
-	<h1> Cadastro </h1>
-	<form (ngSubmit)="submitForm(false)" #loginForm="ngForm">
-		<mat-form-field>
-			<mat-label>Nome de usuário</mat-label>
-			<input matInput type="text" name="username" [(ngModel)]="username" required>
-		</mat-form-field>
+	<ng-template #signupForm>
+		<form (ngSubmit)="submitForm(false)" #loginForm="ngForm">
+			<h1 class="action"> Cadastro </h1>
+			<mat-form-field class="formField">
+				<mat-label>Nome de usuário</mat-label>
+				<input matInput type="text" name="username" [(ngModel)]="username" required>
+			</mat-form-field>
 
-		<mat-form-field>
-			<mat-label>Senha</mat-label>
-			<input matInput type="password" name="password" [(ngModel)]="password"
-				required>
-		</mat-form-field>
+			<mat-form-field class="formField">
+				<mat-label>Senha</mat-label>
+				<input matInput type="password" name="password" [(ngModel)]="password"
+					required>
+			</mat-form-field>
+			<button class="form-button" color="primary" type="submit">Enviar</button>
+		</form>
 
-		<button mat-raised-button color="primary" type="submit">Enviar</button>
-	</form>
-</ng-template>
+	</ng-template>
+</div>
